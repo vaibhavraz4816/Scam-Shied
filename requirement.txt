@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+easyocr
+google-generativeai
+pillow
+numpy
+python-multipart
+jinja2
+python-dotenv

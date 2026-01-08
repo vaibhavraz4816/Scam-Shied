@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scam-Shield</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🛡️ Scam-Shield</h1>
+    <p class="subtitle">AI-Powered Scam Detection System</p>
+
+    <form action="/analyze" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <button type="submit">Analyze Message</button>
+    </form>
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+
+    {% if result %}
+        <div class="card">
+            <h3>📄 Extracted Text</h3>
+            <p>{{ text }}</p>
+        </div>
+
+        <div class="card alert">
+            <h3>📊 AI Analysis</h3>
+            <pre>{{ result }}</pre>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
